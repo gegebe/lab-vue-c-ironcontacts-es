@@ -479,8 +479,22 @@ createApp({
       },
     ]);
 
-    return { 
+    const fullName = ref("");
+
+    const getCelebrity = computed(()=>{
+
+      return allContacts.value.filter((actor)=>{
+        
+        const filterName = actor.name.toLowerCase().includes(fullName.value.toLowerCase());
+
+        return filterName;
+      });
+    })
+
+    return {
+      fullName,
       allContacts,
+      getCelebrity
   };
   },
 }).mount("#app");

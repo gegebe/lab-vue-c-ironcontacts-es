@@ -15,6 +15,11 @@
 <body>
   <main id="app">
     <h1>PIMEC Celebrities</h1>
+    <section>
+      <h2>Filtros</h2>
+      <label for="fullname">Nombre y apellido</label>
+      <input type="text" id="fullname" name="fullname" v-model="fullName">
+    </section>
     <table>
       <thead>
         <tr>
@@ -26,7 +31,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="contact in allContacts">
+        <tr v-for="contact in getCelebrity">
           <!--FOTO-->
           <td>
             <img :src="contact.pictureUrl" :alt="contact.name">
