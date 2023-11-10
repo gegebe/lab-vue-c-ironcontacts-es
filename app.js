@@ -6,6 +6,7 @@ import {
 
 createApp({
   setup() {
+
     const allContacts = ref([
       {
         name: "Idris Elba",
@@ -478,6 +479,8 @@ createApp({
       },
     ]);
 
-    return { allContacts };
+    return { 
+      allContacts,
+  };
   },
 }).mount("#app");
